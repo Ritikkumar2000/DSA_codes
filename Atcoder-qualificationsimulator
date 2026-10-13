@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+using ll=long long;
+#define endl '\n'
+
+void f(){
+    int n,a,b;
+    cin>>n>>a>>b;
+    vector<char> v(n);
+    for(int i=0;i<n;i++){
+        cin>>v[i];
+    }
+    int total=a+b;
+    int count=0,b_count=0;
+    for(auto it:v){
+        if(it=='a' && count<total){
+            cout<<"yes";
+            count++;
+        }
+        else if(it=='b' && count<total && b_count<b){
+            cout<<"yes";
+            count++;
+            b_count++;
+        }
+        else{
+            cout<<"no";
+        }
+        cout<<endl;
+    }
+}
+int main(){
+ios_base::sync_with_stdio(false);
+cin.tie(NULL);
+int t=1;
+// cin>>t;
+while(t--){
+    f();
+}
+return 0;
+}
